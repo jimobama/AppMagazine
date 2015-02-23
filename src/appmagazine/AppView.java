@@ -13,5 +13,10 @@ public class AppView extends IView{
 
     public AppView() {
     }
+
+    @Override
+    void Execute() {
+       //view will show now
+    }
     
 }
