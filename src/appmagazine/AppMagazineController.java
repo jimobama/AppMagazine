@@ -22,8 +22,8 @@ public class AppMagazineController extends IController{
         this.model=aModel;
         this.view.attach(this);
         this.model.attach(this);
-        storyController= new StoryController(this);
-        journistController= new JournistController(this);
+        storyController= StoryController.GetInstance(this);
+        journistController=JournistController.GetInstance(this);
     }
     
     
@@ -45,8 +45,8 @@ public class AppMagazineController extends IController{
          this.journistController.Execute();
        }
 
-    void xhsCallStroy(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    void xhsCallStroy() {
+           this.storyController.Execute();
+         }
     
 }

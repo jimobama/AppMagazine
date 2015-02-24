@@ -10,6 +10,12 @@ package appmagazine;
  * @author Obaro
  */
 class JournistController extends IController{
+ static JournistController instance=null;
+    static JournistController GetInstance(AppMagazineController aThis) {
+       if(instance ==null)
+           instance= new JournistController(aThis);
+       return instance;
+    }
   private AppMagazineController controller;
   private JournistView view;
     
@@ -43,7 +49,7 @@ class JournistController extends IController{
               {
                   this.view.dispose();
                   this.controller.xhsCallFromStory=false;
-                  this.controller.xhsCallStroy(journist.getEmail());
+                  this.controller.xhsCallStroy();
                   
               }
           }
