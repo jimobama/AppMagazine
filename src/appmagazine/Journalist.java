@@ -9,7 +9,7 @@ package appmagazine;
  *
  * @author Obaro
  */
-class Journist {
+class Journalist {
     private String firstname;
     private String lastname;
     private String id;

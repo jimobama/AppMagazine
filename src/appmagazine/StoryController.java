@@ -34,7 +34,7 @@ class StoryController extends IController {
         Story story = view.GetStory();
          if(story.validate())
          {
-              ModelJournist journist= new  ModelJournist();
+              ModelJournalist journist= new  ModelJournalist();
               if(journist.IsExist(story.Journist()))
               {                  
                 StoryModel  amodel= ( StoryModel )this.model;

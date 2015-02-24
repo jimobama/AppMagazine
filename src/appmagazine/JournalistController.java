@@ -9,20 +9,20 @@ package appmagazine;
  *
  * @author Obaro
  */
-class JournistController extends IController{
- static JournistController instance=null;
-    static JournistController GetInstance(AppMagazineController aThis) {
+class JournalistController extends IController{
+ static JournalistController instance=null;
+    static JournalistController GetInstance(AppMagazineController aThis) {
        if(instance ==null)
-           instance= new JournistController(aThis);
+           instance= new JournalistController(aThis);
        return instance;
     }
   private AppMagazineController controller;
-  private JournistView view;
+  private JournalistView view;
     
-    JournistController(IController parent)
+    JournalistController(IController parent)
     {
         controller=(AppMagazineController)parent;
-        view= new JournistView("New Account");
+        view= new JournalistView("New Account");
     }
     @Override
     public void Execute() {
@@ -32,10 +32,10 @@ class JournistController extends IController{
     
     private void SubmitForm()
     {
-        Journist journist= this.view.GetJournist();
+        Journalist journist= this.view.GetJournist();
         if(journist.validate())
         {
-          ModelJournist  aModel =( ModelJournist)model;
+          ModelJournalist  aModel =( ModelJournalist)model;
           if(aModel.IsExist(journist.getEmail()))
           {
               this.view.ShowMessage("This email provided has been already registered",0);              

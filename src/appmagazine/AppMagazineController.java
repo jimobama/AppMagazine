@@ -12,7 +12,7 @@ package appmagazine;
 public class AppMagazineController extends IController{
 
     private StoryController storyController ;
-    private JournistController journistController;
+    private JournalistController journistController;
     private AppView view;
     boolean xhsCallFromStory;
     public AppMagazineController(AppModel aModel)
@@ -23,7 +23,7 @@ public class AppMagazineController extends IController{
         this.view.attach(this);
         this.model.attach(this);
         storyController= StoryController.GetInstance(this);
-        journistController=JournistController.GetInstance(this);
+        journistController=JournalistController.GetInstance(this);
     }
     
     

@@ -9,27 +9,23 @@ package appmagazine;
  *
  * @author Obaro
  */
-class JournistView extends IView{
+class ModelJournalist extends IModel {
+    
+     ModelJournalist()
+     {
+         
+     }
 
-    JournistView(String new_Account) {
+    boolean IsExist(String Journist) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    void Execute() {
+    void attach(IController observer) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void ShowMessage(String your_information_has_be_successfully_reco) {
+    void SaveJournist(Journalist journist) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    void ShowMessage(String this_email_provided_has_been_already_regi, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    Journist GetJournist() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
