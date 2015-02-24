@@ -11,13 +11,19 @@ package appmagazine;
  */
 public class AppMagazineController extends IController{
 
-    public AppMagazineController(AppModel aModel,AppView aView)
+    private StoryController storyController ;
+    private JournistController journistController;
+    private AppView view;
+    boolean xhsCallFromStory;
+    public AppMagazineController(AppModel aModel)
     {
         //set the view  and model of the controller 
-        this.view = aView;
+        this.view = new AppView("Application");
         this.model=aModel;
         this.view.attach(this);
         this.model.attach(this);
+        storyController= new StoryController(this);
+        journistController= new JournistController(this);
     }
     
     
@@ -32,6 +38,15 @@ public class AppMagazineController extends IController{
 
     private boolean Allow() {
       return true;
+    }
+
+    void xhsRegister() {
+        
+         this.journistController.Execute();
+       }
+
+    void xhsCallStroy(String email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

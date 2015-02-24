@@ -9,10 +9,8 @@ package appmagazine;
  *
  * @author Obaro
  */
-class IModel {
+abstract class IModel {
 
-    void attach(IController observer) {
-       
-    }
+   abstract void attach(IController observer);
     
 }

@@ -9,14 +9,23 @@ package appmagazine;
  *
  * @author Obaro
  */
-public class AppModel extends IModel {
+class ModelJournist extends IModel {
+    
+     ModelJournist()
+     {
+         
+     }
 
-    public AppModel() {
+    boolean IsExist(String Journist) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     void attach(IController observer) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    void SaveJournist(Journist journist) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

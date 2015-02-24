@@ -10,7 +10,7 @@ package appmagazine;
  * @author Obaro
  */
 abstract class  IController {
-    protected IView view;
+  
     protected IModel model;   
    public abstract void Execute();
 }

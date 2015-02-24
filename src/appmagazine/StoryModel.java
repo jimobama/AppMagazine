@@ -5,31 +5,28 @@
  */
 package appmagazine;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author Obaro
  */
-public class AppView extends JFrame{
-  
+class StoryModel extends IModel{
     
-    public AppView(String Title) {
-     
-        setTitle(Title);
-        setSize(400,400);
+    
+    StoryModel()
+    {
+        
     }
 
-    
-    void Execute() {
-       //view will show now
-        setVisible(true);
+    @Override
+    void attach(IController observer) {
+      
     }
 
-    void attach(AppMagazineController aThis) {
+    boolean IsStoryExist(Story story) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-  
-    
+    void SaveStory(Story story) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
