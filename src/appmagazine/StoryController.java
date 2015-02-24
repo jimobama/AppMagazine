@@ -10,6 +10,15 @@ package appmagazine;
  * @author Obaro
  */
 class StoryController extends IController {
+        static StoryController instance=null;   
+    static StoryController GetInstance(AppMagazineController aThis) {
+       
+        if(instance==null)
+        {
+            instance= new StoryController(aThis);
+        }
+        return instance;
+    }
 
     MainStoryView view ;
     AppMagazineController controller;
