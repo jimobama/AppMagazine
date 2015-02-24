@@ -16,7 +16,7 @@ public class AppMagazine {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        AppMagazineController  controller= new AppMagazineController(new AppModel(),new AppView());
+        AppMagazineController  controller= new AppMagazineController(new AppModel(),new AppView("Application: "));
         controller.Execute();
     }
     

@@ -5,18 +5,24 @@
  */
 package appmagazine;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Obaro
  */
 public class AppView extends IView{
-
-    public AppView() {
+  
+    private JFrame window;
+    public AppView(String Title) {
+        window= new JFrame(Title);
+        window.setContentPane(this);
     }
 
     @Override
     void Execute() {
        //view will show now
+        this.window.setVisible(true);
     }
     
 }

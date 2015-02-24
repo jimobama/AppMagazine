@@ -24,7 +24,14 @@ public class AppMagazineController extends IController{
     @Override
     public void Execute()
     {
-        System.out.println("Main View will launch");
+         if(this.Allow())
+         {
+             this.view.Execute();
+         }
+    }
+
+    private boolean Allow() {
+      return true;
     }
     
 }

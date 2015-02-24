@@ -5,14 +5,18 @@
  */
 package appmagazine;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author Obaro
  */
-class IView {
+abstract class IView extends JPanel{
 
     void attach(IController observer) {
         
     }
+
+   abstract void Execute();
     
 }
