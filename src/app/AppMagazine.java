@@ -7,6 +7,8 @@ package app;
 
 import appmagazine.AppMagazineController;
 import appmagazine.AppModel;
+import appmagazine.AppView;
+
 
 
 public class AppMagazine {
@@ -16,7 +18,7 @@ public class AppMagazine {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        AppMagazineController  controller= new AppMagazineController(new AppModel());
+        AppMagazineController  controller= new AppMagazineController(new AppModel(), new AppView("Magazine Application"));
         controller.Execute();
     }
     

@@ -10,13 +10,13 @@ package appmagazine;
  * @author Obaro
  */
 public class AppModel extends IModel {
-
+private AppMagazineController controller;
     public AppModel() {
     }
 
     @Override
     void attach(IController observer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.controller=(AppMagazineController)observer;
     }
     
 }

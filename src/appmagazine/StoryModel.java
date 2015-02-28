@@ -50,4 +50,14 @@ class StoryModel extends IModel{
              this.stories.add(story);
          }
     }
+
+  ArrayList<Story> getAllStories(String email) {
+       ArrayList <Story> temArry;
+      temArry =  this.loadAllStories(email);
+       return temArry;
+    }
+
+    private ArrayList<Story> loadAllStories(String email) {
+       return this.stories;
+    }
 }

@@ -11,23 +11,40 @@ import javax.swing.JFrame;
  *
  * @author Obaro
  */
-public class AppView extends JFrame{
+public class AppView extends IView{
   
-    
+    private AppMagazineController controller;
     public AppView(String Title) {
      
-        setTitle(Title);
-        setSize(400,400);
+       
     }
-
+  
+    private char _menu()
+    {
+        char prompt;
+        Console.WriteLn(ColorCode.BLUE+"[*************"+ColorCode.WHITE+" Main Menu "+ColorCode.BLUE+"***************]"+ColorCode.BLACK);
+        Console.WriteLn("a). -  Add New Story");
+        Console.WriteLn("e). -  Exit Application");
+        
+        prompt = Console.askChar("Enter option ? ");
+       
+        return prompt;
+    }
     
+    @Override
     void Execute() {
-       //view will show now
-        setVisible(true);
+       char prompt = this._menu();
+       if(prompt  == 'E')
+       {
+           Console.exit(0);
+       }
+      controller.xhsCallStroy();
+      Execute();
+       
     }
 
-    void attach(AppMagazineController aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void attach(IController parent) {
+        controller =(AppMagazineController)parent;
     }
 
   

@@ -27,7 +27,7 @@ class JournalistController extends IController{
     @Override
     public void Execute() {
        
-        this.view.setVisible(true);
+       
     }
     
     private void SubmitForm()
@@ -47,7 +47,7 @@ class JournalistController extends IController{
               
               if(this.controller.xhsCallFromStory)
               {
-                  this.view.dispose();
+                  
                   this.controller.xhsCallFromStory=false;
                   this.controller.xhsCallStroy();
                   

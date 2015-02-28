@@ -5,15 +5,13 @@
  */
 package appmagazine;
 
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 
 
 /**
  *
  * @author Obaro
  */
-abstract class IView extends JDialog{
+abstract class IView extends Console{
 
     void attach(IController observer) {
         

@@ -15,10 +15,10 @@ public class AppMagazineController extends IController{
     private JournalistController journistController;
     private AppView view;
     boolean xhsCallFromStory;
-    public AppMagazineController(AppModel aModel)
+    public AppMagazineController(AppModel aModel,AppView aview)
     {
         //set the view  and model of the controller 
-        this.view = new AppView("Application");
+        this.view = aview;
         this.model=aModel;
         this.view.attach(this);
         this.model.attach(this);
@@ -26,19 +26,16 @@ public class AppMagazineController extends IController{
         journistController=JournalistController.GetInstance(this);
     }
     
-    
+   
     @Override
     public void Execute()
     {
-         if(this.Allow())
-         {
-             this.view.Execute();
-         }
+         
+      this.view.Execute();
+      
     }
 
-    private boolean Allow() {
-      return true;
-    }
+  
 
     void xhsRegister() {
         
