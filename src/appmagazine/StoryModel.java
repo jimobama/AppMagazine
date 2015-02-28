@@ -5,28 +5,49 @@
  */
 package appmagazine;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  *
- * @author Obaro
+ *  The class is the story model that will added journalist story and edit the story and store the stories to an xml files
  */
 class StoryModel extends IModel{
     
+     ArrayList<Story> stories;
+     StoryController controller;
     
     StoryModel()
     {
-        
+        stories = new ArrayList<>();
     }
 
     @Override
     void attach(IController observer) {
-      
+     this.controller = ( StoryController)observer;
     }
 
     boolean IsStoryExist(Story story) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+     Iterator<Story>  iter=   this.stories.iterator();
+     
+      while(iter.hasNext())
+      {
+          Story temStory=  iter.next();
+          if(temStory.equals(story))
+          {
+              return true;
+          }
+      }
+      
+      return false;
     }
 
     void SaveStory(Story story) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+         if(!this.IsStoryExist(story))
+         {
+             this.stories.add(story);
+         }
     }
 }
