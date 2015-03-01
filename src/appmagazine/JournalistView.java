@@ -11,25 +11,91 @@ package appmagazine;
  */
 class JournalistView extends IView{
 
-    JournalistView(String new_Account) {
-      
+    private   Journalist j;
+    private String  Title;
+    
+    JournalistController controller;
+    JournalistView(String title) {
+      j= new Journalist ();
+      Title=title;
     }
 
     @Override
     void Execute() {
-      
+       this._start();
     }
 
-    void ShowMessage(String your_information_has_be_successfully_reco) {
-      
-    }
-
-    void ShowMessage(String this_email_provided_has_been_already_regi, int i) {
-       
-    }
-
+   
     Journalist GetJournist() {
-      return null;
+      return this.j;
+    }
+
+    private void _start() {
+        Console.WriteLn(ColorCode.BLUE+"---------"+Title+"-----------"+ColorCode.BLACK);      
+          
+        this.j.setEmail(Console.askString("Enter your email address ? "));
+        this.j.setFirstname(Console.askString("Enter your firstname ?"));
+        this.j.setLastname(Console.askString("Enter your lastname ?"));
+        this.j.setAddress(Console.askString("Enter your current address ?"));
+        this.j.setPhonenumber(Console.askString("Enter your mobile number ? "));
+        
+        this.j= this.validated();
+        
     }
     
+    public void attach(IController observer) {
+       controller= (JournalistController)observer;
+    }
+
+    private Journalist validated() {
+        
+        Console.WriteLn("Do you want to continue the registration [y/n]? ");
+        char c= Console.askChar("Enter choice : ");
+         if(c =='Y' || c == 'y')
+         {       
+            if(!this.j.validate())
+            {
+                this.ShowMessage(ColorCode.RED+j.Error+ColorCode.BLACK,0);
+              switch(this.j.CODE)    
+              {
+                  case Journalist.EMAIL:
+                  {
+                   this.j.setEmail(Console.askString("Enter your email address again ? "));
+                   break;
+                  }
+                  case Journalist.ADDRESS:
+                  {
+                      this.j.setAddress(Console.askString("Enter your current address again ?"));
+                      break;
+                  }
+                  case Journalist.FIRSTNAME:
+                  {
+                    this.j.setFirstname(Console.askString("Enter your firstname again ?"));
+                    break;
+                  }
+                  case Journalist.LASTNAME:
+                  {
+                      this.j.setLastname(Console.askString("Enter your lastname again ?"));
+                      break;
+                  }
+                  case Journalist.PHONENUMBER:
+                  {
+                      this.j.setPhonenumber(Console.askString("Enter your mobile number again ? "));  
+                  }
+                  default:
+                      break;
+              }
+              
+              this.j=  validated();
+            }
+         }
+        return this.j;
+    }
+    
+    
+    String askUserName() {
+      
+        String email= Console.askString(ColorCode.WHITE+"Enter your email address ? "+ColorCode.BLACK);
+        return email;
+    }
 }

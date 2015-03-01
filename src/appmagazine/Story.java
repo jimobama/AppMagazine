@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Obaro
  */
-public class Story {
+public class Story implements java.io.Serializable {
     static int CODE;
      public static final int   EMAIL=0;
      public static final int TITLE=1;

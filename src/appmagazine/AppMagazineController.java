@@ -40,10 +40,26 @@ public class AppMagazineController extends IController{
     void xhsRegister() {
         
          this.journistController.Execute();
-       }
+       }  
 
     void xhsCallStroy() {
-           this.storyController.Execute();
+           if(this.journistController.verify())
+           {
+            this.storyController.Execute();
+           }
+           else
+           {
+            xhsRegister();       
+           }
          }
+
+    boolean xhsIsUserExist(String journistId) {
+      
+      return this.journistController.IsExist(journistId);
+    }
+
+    String xhsAskUsername() {
+       return this.journistController.getUsername();
+    }
     
 }

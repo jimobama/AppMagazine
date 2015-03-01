@@ -16,10 +16,16 @@ class StoryModel extends IModel{
     
      ArrayList<Story> stories;
      StoryController controller;
-    
+      private Database db;
     StoryModel()
     {
-        stories = new ArrayList<>();
+      
+        db= new Database("tbl_story.txt");
+        this.stories= (ArrayList<Story>)this.db.GetObject();
+        if(this.stories ==null)
+        {
+              stories = new ArrayList<>();
+        }
     }
 
     @Override
@@ -48,16 +54,33 @@ class StoryModel extends IModel{
          if(!this.IsStoryExist(story))
          {
              this.stories.add(story);
+             this.db.SaveObject(stories);
+            this.stories = (ArrayList<Story>)this.db.GetObject(); 
          }
     }
 
   ArrayList<Story> getAllStories(String email) {
        ArrayList <Story> temArry;
-      temArry =  this.loadAllStories(email);
+        temArry =  this.loadAllStories(email);
        return temArry;
     }
 
     private ArrayList<Story> loadAllStories(String email) {
-       return this.stories;
+       ArrayList<Story>  tem= new ArrayList<Story>();
+       
+       Iterator<Story> iter= this.stories.iterator();
+       
+       while(iter.hasNext())
+       {
+           Story story = iter.next();
+           
+           if(story.getJournistId().equalsIgnoreCase(email.trim()))
+           {
+               tem.add(story);
+           }
+       }
+        
+        
+       return tem;
     }
 }

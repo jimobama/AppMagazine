@@ -37,6 +37,7 @@ public class AppView extends IView{
        if(prompt  == 'E')
        {
            Console.exit(0);
+           System.exit(-1);
        }
       controller.xhsCallStroy();
       Execute();

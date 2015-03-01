@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 class StoryController extends IController {
         static StoryController instance=null;   
+        
+      
     static StoryController GetInstance(AppMagazineController aThis) {
        
         if(instance==null)
@@ -73,12 +75,14 @@ class StoryController extends IController {
 
     void xhsAddStory(Story story) {
       
+        if(this.controller.xhsIsUserExist(story.getJournistId()))
+        {
          if(story.validate())
          {
             StoryModel  amodel=(StoryModel) (this.model);
              if(amodel.IsStoryExist(story))
              {
-                 this.view.ShowMessage("The story Title already exist if you dont mind  or you can reflame it", 0);
+                 this.view.ShowMessage("The story Title already exist if you don't mind  or you can reflame it", 0);
                  amodel.SaveStory(story);
                  this.xhsDisplayStoryTable();
                  
@@ -89,12 +93,17 @@ class StoryController extends IController {
                 this.view.ShowMessage("The story is been successfully added ",1);
              }
          }
+        }
+      else
+        {
+            this.controller.xhsRegister();
+        }
     }
 
     void xhsDisplayStoryTable() {
         StoryModel amodel = (StoryModel)model;
         ArrayList<Story> stories = null;
-        String email = this.view.askUserName();
+        String email = controller.xhsAskUsername();
         stories = amodel.getAllStories(email);
         this.view.displayStories(stories);
        

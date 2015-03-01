@@ -42,6 +42,7 @@ class MainStoryView extends IView {
          case 'A':
          case 'a':
          {
+           
            Story  story=this.GetStory();
            this.controller.xhsAddStory(story);
            Execute();
@@ -77,19 +78,7 @@ class MainStoryView extends IView {
     
     
 
-    void ShowMessage(String msg, int i) {
-       
-        switch(i)
-        {
-            case 0:
-                Console.WriteLn(ColorCode.RED+msg+ColorCode.BLACK);
-                break;
-            default:
-                 Console.WriteLn(ColorCode.BLACK+msg+ColorCode.BLACK);
-                break;
-        }
-    }
-
+   
     void reset() {
        
     }
@@ -184,11 +173,7 @@ class MainStoryView extends IView {
        Console.WriteLn(t.render());
     }
 
-    String askUserName() {
-      
-        String email= Console.askString(ColorCode.WHITE+"Enter your email address ? "+ColorCode.BLACK);
-        return email;
-    }
+    
 
  
 

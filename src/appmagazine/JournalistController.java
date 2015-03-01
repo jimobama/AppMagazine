@@ -23,11 +23,14 @@ class JournalistController extends IController{
     {
         controller=(AppMagazineController)parent;
         view= new JournalistView("New Account");
+        this.model= new ModelJournalist();
+        view.attach(this);
+        this.model.attach(this);
     }
     @Override
     public void Execute() {
-       
-       
+       this.view.Execute();
+       this.SubmitForm();
     }
     
     private void SubmitForm()
@@ -43,17 +46,31 @@ class JournalistController extends IController{
           else
           {
               aModel.SaveJournist(journist);
-              this.view.ShowMessage("Your information has be successfully recorded");
-              
-              if(this.controller.xhsCallFromStory)
-              {
-                  
-                  this.controller.xhsCallFromStory=false;
-                  this.controller.xhsCallStroy();
-                  
-              }
+              this.view.ShowMessage("Your information has be successfully recorded",1);
+              this.controller.xhsCallStroy();                
+             
           }
         }
+    }
+
+    boolean IsExist(String journistId) {
+      
+         ModelJournalist amodel= ( ModelJournalist)model;
+         if(amodel.IsExist(journistId))
+         {
+             return true;
+         }
+         return false;
+    }
+
+    boolean verify() {
+        
+      String email= this.view.askUserName();
+      return IsExist(email);
+    }
+
+    String getUsername() {
+       return this.view.askUserName();
     }
     
 }

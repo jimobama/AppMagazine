@@ -18,5 +18,19 @@ abstract class IView extends Console{
     }
 
    abstract void Execute();
+   
+    void ShowMessage(String msg, int i) {
+       
+        switch(i)
+        {
+            case 0:
+                Console.WriteLn(ColorCode.RED+msg+ColorCode.BLACK);
+                break;
+            default:
+                 Console.WriteLn(ColorCode.BLACK+msg+ColorCode.BLACK);
+                break;
+        }
+    }
+
     
 }
