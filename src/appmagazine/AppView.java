@@ -48,6 +48,18 @@ public class AppView extends IView{
         controller =(AppMagazineController)parent;
     }
 
+    void promptForRegistration() {
+        char prompt= Console.askChar("Enter 'a' to create new account or any key to main menu again? ");
+        if(prompt=='a' || prompt=='A')
+        {
+               controller.xhsRegister();    
+        }
+       else
+        {
+            controller.Execute();
+        }
+    }
+
   
     
 }
