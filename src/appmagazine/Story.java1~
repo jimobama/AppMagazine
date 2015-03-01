@@ -7,8 +7,6 @@ package appmagazine;
 
 import java.util.Date;
 
-import java.io.Serializable;
-
 /**
  *
  * @author Obaro
