@@ -24,7 +24,7 @@ class StoryModel extends IModel{
         this.stories= (ArrayList<Story>)this.db.GetObject();
         if(this.stories ==null)
         {
-              stories = new ArrayList<>();
+              stories = new ArrayList<Story>();
         }
     }
 
