@@ -10,22 +10,24 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author Obaro
+This class save the stories details and Journalist details into a file and able to
+* retrieved them
  */
 class Database {
 
     private String filename;
     private  boolean _save;
+    //The parameterised controller for the Database that takes a filenanme and write to it
     Database(String FileName) {
        filename=FileName;
     }
     
+    //The method check if a database saveObject operation successfully executes
     boolean IsSave()
     {
        
@@ -63,7 +65,7 @@ class Database {
        
     }
     
-    
+    //The method fetch all the object from the file
     Object  GetObject()
     {
         File file = new File(this.filename);

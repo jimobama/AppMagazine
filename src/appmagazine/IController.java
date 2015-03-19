@@ -1,5 +1,7 @@
 /*
-The controller : is designed to observer more than one subjects that will be able to called its observer methods 
+
+This is the observer object that must be implemented by every controller to be able to observer the operations inside 
+its subjects
  */
 package appmagazine;
 

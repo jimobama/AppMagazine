@@ -15,7 +15,7 @@ import helps.Console;
 class JournalistView extends IView{
 
     private   Journalist j;
-    private String  Title;
+    private final String  Title;
     
     JournalistController controller;
     JournalistView(String title) {
@@ -45,7 +45,8 @@ class JournalistView extends IView{
         this.j= this.validated();
         
     }
-    
+    //Attach the observer to the subject
+    @Override
     public void attach(IController observer) {
        controller= (JournalistController)observer;
     }
@@ -95,7 +96,7 @@ class JournalistView extends IView{
         return this.j;
     }
     
-    
+    //As the user to enter to 
     String askUserName() {
       
         String email= Console.askString(ColorCode.WHITE+"Enter your email address ? "+ColorCode.BLACK);

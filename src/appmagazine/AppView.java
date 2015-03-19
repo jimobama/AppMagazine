@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Obaro
+The main controller view
  */
 public class AppView extends IView{
   
@@ -21,6 +21,7 @@ public class AppView extends IView{
        
     }
   
+    //This method display the menu on the console
     private char _menu()
     {
         char prompt;

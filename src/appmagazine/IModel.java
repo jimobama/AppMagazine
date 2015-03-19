@@ -1,7 +1,5 @@
 /*
- A model is designed to be the observer subject and the Icontroller the observer object
-
-A Model observer is designed to observer by only one controller and same to the view 
+This is the subject class abstract innterface that Icontroller can be able to observer its inner activities
 
  */
 package appmagazine;

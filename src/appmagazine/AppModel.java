@@ -7,7 +7,7 @@ package appmagazine;
 
 /**
  *
- * @author Obaro
+The Main App model
  */
 public class AppModel extends IModel {
 private AppMagazineController controller;
