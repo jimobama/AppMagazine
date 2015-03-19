@@ -13,24 +13,26 @@ import helps.Console;
 
 /**
  *
- * @author Obaro
+The view class external the console class that writes to the console
  */
 abstract class IView extends Console{
 
     void attach(IController observer) {
         
     }
-
    abstract void Execute();
    
+   // This method will show the test msg to the color 
     void ShowMessage(String msg, int i) {
        
         switch(i)
         {
             case 0:
+                // error message
                 Console.WriteLn(ColorCode.RED+msg+ColorCode.BLACK);
                 break;
             default:
+                //Good message
                  Console.WriteLn(ColorCode.BLACK+msg+ColorCode.BLACK);
                 break;
         }
