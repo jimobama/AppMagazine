@@ -5,7 +5,7 @@
  */
 package appmagazine;
 
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.nocrala.tools.texttablefmt.BorderStyle;
@@ -15,8 +15,7 @@ import org.nocrala.tools.texttablefmt.ShownBorders;
 import org.nocrala.tools.texttablefmt.Table;
 
 /**
- *
- * @author Obaro
+The class is the view  of the StoryController , it handles every out putting and printing of views to the users
  */
 class MainStoryView extends IView {
  
@@ -61,7 +60,7 @@ class MainStoryView extends IView {
      }
      
     }
-
+//The method prompt a user to enter story details and then return the story as an objects
     Story GetStory()
     {
      Story story= new Story();
@@ -83,6 +82,7 @@ class MainStoryView extends IView {
        
     }
 
+    //The method check if the story is valid or not
     private Story validate(Story story)
     {
          char quit= Console.askChar(ColorCode.BLUE+"Do you want to continue with the story submission or leave this stage [y/n]? "+ColorCode.BLACK);
@@ -121,6 +121,7 @@ class MainStoryView extends IView {
          return story;
     }
 
+    //The menu for the story operations
     private char menu()  {
        char prompt;
      
@@ -133,6 +134,7 @@ class MainStoryView extends IView {
        return prompt;
     }
 
+    //The method display the list of all the story in a table form on the console.
     void displayStories(ArrayList<Story> stories) {
         Table t= new Table(6,BorderStyle.DESIGN_DOTS_WIDE,ShownBorders.SURROUND_HEADER_FOOTER_AND_COLUMNS);
         CellStyle nstyle = new CellStyle(HorizontalAlign.center);
@@ -170,7 +172,7 @@ class MainStoryView extends IView {
          t.addCell("", nstyle);
          t.addCell("Total Stories = ", nstyle);         
          t.addCell(String.valueOf(counter), rstyle);
-       Console.WriteLn(t.render());
+         Console.WriteLn(t.render());
     }
 
     

@@ -1,26 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+/*This is the application main controller ;
+This controller contains other sub-controller of the rest classes
+like StoryController and the JournalistController.
+
+
+*/
 package appmagazine;
 
-/**
- *
- * @author Obaro
- */
+
 public class AppMagazineController extends IController{
 
     private StoryController storyController ;
     private JournalistController journistController;
     private AppView view;
     boolean xhsCallFromStory;
+    
+    //The parameterised controller
     public AppMagazineController(AppModel aModel,AppView aview)
     {
         //set the view  and model of the controller 
         this.view = aview;
         this.model=aModel;
+        // The view attach its observer 
         this.view.attach(this);
+        //The method attached its observer
         this.model.attach(this);
         storyController= StoryController.GetInstance(this);
         journistController=JournalistController.GetInstance(this);
@@ -29,8 +32,7 @@ public class AppMagazineController extends IController{
    
     @Override
     public void Execute()
-    {
-         
+    {         
       this.view.Execute();
       
     }
