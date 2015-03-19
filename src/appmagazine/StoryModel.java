@@ -33,6 +33,7 @@ class StoryModel extends IModel{
      this.controller = ( StoryController)observer;
     }
 
+    //test this method
     boolean IsStoryExist(Story story) {
        
      Iterator<Story>  iter=   this.stories.iterator();
