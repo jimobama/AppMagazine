@@ -12,12 +12,12 @@ import java.util.Iterator;
  *
  *  The class is the story model that will added journalist story and edit the story and store the stories to an xml files
  */
-class StoryModel extends IModel{
+public class StoryModel extends IModel{
     
      ArrayList<Story> stories;
      StoryController controller;
       private Database db;
-    StoryModel()
+ public   StoryModel()
     {
       
         db= new Database("tbl_story.txt");
@@ -34,7 +34,7 @@ class StoryModel extends IModel{
     }
 
     //test this method
-    boolean IsStoryExist(Story story) {
+  public  boolean IsStoryExist(Story story) {
        
      Iterator<Story>  iter=   this.stories.iterator();
      
@@ -50,7 +50,7 @@ class StoryModel extends IModel{
       return false;
     }
 
-    void SaveStory(Story story) {
+ public   void SaveStory(Story story) {
        
          if(!this.IsStoryExist(story))
          {
@@ -60,7 +60,7 @@ class StoryModel extends IModel{
          }
     }
 
-  ArrayList<Story> getAllStories(String email) {
+  public ArrayList<Story> getAllStories(String email) {
        ArrayList <Story> temArry;
         temArry =  this.loadAllStories(email);
        return temArry;

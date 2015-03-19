@@ -12,13 +12,13 @@ import java.util.Iterator;
  *
  * @author Obaro
  */
-class ModelJournalist extends IModel {
+public class ModelJournalist extends IModel {
     
    private  ArrayList<Journalist> journalists;
    private  JournalistController controller;
    private String FileName="tbl_journist.txt";
    private Database db;
-     ModelJournalist()
+     public ModelJournalist()
      {
         
          db   = new  Database(this.FileName);
@@ -29,7 +29,7 @@ class ModelJournalist extends IModel {
        
      }
 
-    boolean IsExist(String email) {
+   public  boolean IsExist(String email) {
        
         Iterator<Journalist> iter = this.journalists.iterator();
         
