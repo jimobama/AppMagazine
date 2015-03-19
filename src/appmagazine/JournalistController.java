@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+This is the Journalist class controller that enable one to add , remove and delete journalist details from db
  */
 package appmagazine;
 
@@ -27,25 +25,32 @@ class JournalistController extends IController{
         view.attach(this);
         this.model.attach(this);
     }
+    //Inherit class from the Icontroller to show the view
     @Override
     public void Execute() {
        this.view.Execute();
        this.SubmitForm();
     }
     
+    //This submit the form to the database 
     private void SubmitForm()
     {
+        //Get the journist information from the controller's view 
         Journalist journist= this.view.GetJournist();
         if(journist.validate())
         {
+            //type cast the model back to the Journalist model
           ModelJournalist  aModel =( ModelJournalist)model;
+          //Check if the email of the journalist already exists
           if(aModel.IsExist(journist.getEmail()))
           {
               this.view.ShowMessage("This email provided has been already registered",0);              
           }
           else
           {
+              //Save it to the file
               aModel.SaveJournist(journist);
+              //Show the message to the users
               this.view.ShowMessage("Your information has be successfully recorded",1);
               this.controller.xhsCallStroy();                
              
@@ -53,6 +58,7 @@ class JournalistController extends IController{
         }
     }
 
+    //This check if the journalist email exist
     boolean IsExist(String journistId) {
       
          ModelJournalist amodel= ( ModelJournalist)model;
@@ -63,6 +69,7 @@ class JournalistController extends IController{
          return false;
     }
 
+    // The method verifiy the user journalis information by asking the view to input its email address
     boolean verify() {
         
       String email= this.view.askUserName();

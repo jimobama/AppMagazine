@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+The Model to the Story controller that handle data manipulation like saving to data file, delete story and retriving stories from data file
+The model check if a story exists or not and report error to the controller that is later will be passsed to the Story view.
  */
 package appmagazine;
 
