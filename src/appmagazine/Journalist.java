@@ -5,8 +5,6 @@
  */
 package appmagazine;
 
-import java.io.Serializable;
-
 /**
  *
  * @author Obaro
@@ -76,10 +74,13 @@ class Journalist implements java.io.Serializable{
         this.phonenumber = phonenumber;
     }
 
+    // The method validate the class fields of the class if they are in the right formats
     boolean validate()
     {
         boolean okay=false;
+        // Reg expression to check names
         String NPattern="^[a-zA-Z_]+[a-zA-Z0-9 ]+$";
+        //Regex expression to check phone number
         String NPhone="^[0-9\\+]{0,1}([0-9]+){10,15}$";
         
        if(!Validator.isMatch("^[a-zA-Z_]+[a-zA-Z0-9\\.]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]{2,4}$", this.email.trim()))
