@@ -5,6 +5,7 @@
  */
 package appmagazine;
 
+import helps.Validator;
 import java.util.Date;
 
 import java.io.Serializable;

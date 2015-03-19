@@ -6,6 +6,8 @@ The class will be implement with the unitAppRunner class
 package app;
 
 import org.junit.Test;
+// use the import static to import a static field or class inside another class to avoid using the class its self
+import static org.junit.Assert.*;
 
 public class AppUnitTest {
     
@@ -19,4 +21,6 @@ public class AppUnitTest {
         
     }
     
+   
+   
 }

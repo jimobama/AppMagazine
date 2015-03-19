@@ -5,6 +5,8 @@
  */
 package appmagazine;
 
+import helps.Validator;
+
 /**
  *
  * @author Obaro

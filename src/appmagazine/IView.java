@@ -5,6 +5,10 @@
  */
 package appmagazine;
 
+//External libraries that we used during year one 
+import helps.ColorCode;
+import helps.Console;
+
 
 
 /**

@@ -5,6 +5,8 @@
  */
 package appmagazine;
 
+import helps.ColorCode;
+import helps.Console;
 import javax.swing.JFrame;
 
 /**

@@ -5,6 +5,9 @@
  */
 package appmagazine;
 
+import helps.ColorCode;
+import helps.Console;
+
 /**
  *
  * @author Obaro

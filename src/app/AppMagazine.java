@@ -17,7 +17,7 @@ public class AppMagazine {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+     //The main controller 
         AppMagazineController  controller= new AppMagazineController(new AppModel(), new AppView("Magazine Application"));
         controller.Execute();
     }

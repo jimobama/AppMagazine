@@ -6,6 +6,8 @@
 package appmagazine;
 
 
+import helps.ColorCode;
+import helps.Console;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.nocrala.tools.texttablefmt.BorderStyle;
